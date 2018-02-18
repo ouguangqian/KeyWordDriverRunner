@@ -1,0 +1,11 @@
+click
+open
+loop 5
+click
+input
+loop 6
+open
+click
+end
+end
+input
