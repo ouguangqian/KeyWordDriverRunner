@@ -31,7 +31,6 @@ public class FileUtil {
 
     public static List<String> pathToFileList(String filePath){
         File file = new File(filePath);
-        System.out.println(filePath);
         if (file.isFile()){
             fileList.add(filePath);
         }else if (file.isDirectory()){
@@ -48,7 +47,6 @@ public class FileUtil {
         List<Map<String, List<String>>> caseLists = new ArrayList<Map<String,List<String>>>();
         List<String> fileList = pathToFileList(filePath);
         for (String file: fileList) {
-            System.out.println(file);
             List<String> caseList = caseToList(file);
             Map<String, List<String>> map = new HashMap<String, List<String>>();
             map.put("file", Arrays.asList(file));

@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.util.*;
 
 public class Runner {
-    public static void Runner(String filePath) throws IOException {
+    public static void Runner(String filePath) throws IOException, NoSuchMethodException {
 
         List<Map<String, List<String>>> caseLists =  FileUtil.fileToCaseMap(filePath);
 
@@ -17,17 +17,18 @@ public class Runner {
                 if (cl.get(i).startsWith("loop")) {
                     int startIndex = i;
                     int endIndex = cl.lastIndexOf("end");
-                    RunLoopKeyWord.runLoopKeyWords(cl.subList(startIndex+1, endIndex), Integer.parseInt(cl.get(i).split("\\s+")[1]));
+                    RunLoopStep.runLoopSteps(cl.subList(startIndex+1, endIndex), Integer.parseInt(cl.get(i).split("\\s+")[1]));
                     i = endIndex;
                 }else {
-                    RunKeyWord.runKeyWord(cl.get(i));
+                    RunStep.runStep(cl.get(i));
                 }
 
             }
         }
     }
 
-    public static void main(String[] args) throws IOException {
-        Runner.Runner("E:\\IdeaProjects\\fortest\\src\\main\\resources");
+    public static void main(String[] args) throws IOException, NoSuchMethodException {
+        Runner.Runner("E:\\IdeaProjects\\KeyWordDriverRunner\\src\\main\\resources");
+        System.out.println(Context.CONTEXTMAP.get("abc"));
     }
 }

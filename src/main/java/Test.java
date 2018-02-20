@@ -1,6 +1,6 @@
 import com.ogq.RunKeyWord;
-import com.ogq.RunLoopKeyWord;
-import com.sun.org.apache.xerces.internal.impl.xpath.XPath;
+import com.ogq.RunLoopStep;
+import com.ogq.RunStep;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -33,7 +33,7 @@ public class Test {
         }
     }
 
-    public static void main(String[] args){
+    public static void main(String[] args) throws NoSuchMethodException {
 
         // 处理循环
         for (int i = 0; i < STEPS.size(); i++){
@@ -41,11 +41,11 @@ public class Test {
                 int startIndex = i;
                 int endIndex = STEPS.lastIndexOf("结束");
 //                runLoopKeyWord(STEPS.subList(startIndex+1, endIndex), Integer.parseInt(STEPS.get(i).split("\\s+")[1]));
-                RunLoopKeyWord.runLoopKeyWords(STEPS.subList(startIndex+1, endIndex), Integer.parseInt(STEPS.get(i).split("\\s+")[1]));
+                RunLoopStep.runLoopSteps(STEPS.subList(startIndex+1, endIndex), Integer.parseInt(STEPS.get(i).split("\\s+")[1]));
                 i = endIndex;
             }else {
 //                runKeyWord(STEPS.get(i));
-                RunKeyWord.runKeyWord(STEPS.get(i));
+                RunStep.runStep(STEPS.get(i));
             }
 
 
