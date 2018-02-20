@@ -1,8 +1,9 @@
 package com.ogq;
 
 public class MoveDesk {
-    public void setZhangsan(){
+    public boolean setZhangsan(){
         System.out.println("This is zhangsan");
+        return true;
     }
 
     public String moveDeskFromA2B(String str1, String str2){

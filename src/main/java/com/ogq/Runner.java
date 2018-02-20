@@ -30,5 +30,7 @@ public class Runner {
     public static void main(String[] args) throws IOException, NoSuchMethodException {
         Runner.Runner("E:\\IdeaProjects\\KeyWordDriverRunner\\src\\main\\resources");
         System.out.println(Context.CONTEXTMAP.get("abc"));
+        System.out.println(Context.CONTEXTMAP.get("bbc"));
+        System.out.println(Context.CONTEXTMAP.get("cbc"));
     }
 }
